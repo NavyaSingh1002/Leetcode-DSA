@@ -18,12 +18,14 @@ public:
 
     vector<int> nextSmaller(vector<int> &arr) {
         stack<int> st;
-        vector<int> ans(arr.size(), arr.size());    //(size, default value at each index)
+        vector<int> ans(arr.size());    //(size, default value at each index)
         for(int i=arr.size()-1; i>=0; i--) {
             while(!st.empty() && arr[st.top()]>=arr[i])
                 st.pop();
             if(!st.empty())
                 ans[i]=st.top();
+            else
+                ans[i]=arr.size();
             st.push(i);
         }
         return ans;
