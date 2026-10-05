@@ -36,7 +36,7 @@ public:
                 temp->prev=node;
                 size++;
             }
-
+ 
             void removeNode(Node *node) {
                 Node *prevNode=node->prev;
                 Node *nextNode=node->next;
